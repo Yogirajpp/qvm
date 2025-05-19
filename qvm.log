@@ -32,3 +32,13 @@
 2025-05-19 16:30:50.616 [INFO] [QVM] QVM instance created {"service":"quantum-virtual-machine"}
 2025-05-19 16:30:50.628 [INFO] [QVM] Initializing QVM with max 32 qubits {"service":"quantum-virtual-machine"}
 2025-05-19 16:30:50.631 [INFO] [QVM] QVM initialized successfully {"service":"quantum-virtual-machine"}
+2025-05-19 16:45:26.757 [INFO] [QVM] QVM instance created {"service":"quantum-virtual-machine"}
+2025-05-19 16:45:26.789 [ERROR] [QVM:BytecodeInterpreter] Execution error at PC=1: Unknown opcode: 0x51 {"service":"quantum-virtual-machine"}
+2025-05-19 16:45:26.769 [INFO] [QVM] Initializing QVM with max 32 qubits {"service":"quantum-virtual-machine"}
+2025-05-19 16:45:26.772 [INFO] [QVM] QVM initialized successfully {"service":"quantum-virtual-machine"}
+2025-05-19 16:45:26.792 [INFO] [QVM] QBC execution completed with 0 instructions executed {"service":"quantum-virtual-machine"}
+2025-05-19 16:45:56.776 [INFO] [QVM] QVM instance created {"service":"quantum-virtual-machine"}
+2025-05-19 16:45:56.787 [INFO] [QVM] Initializing QVM with max 32 qubits {"service":"quantum-virtual-machine"}
+2025-05-19 16:45:56.791 [INFO] [QVM] QVM initialized successfully {"service":"quantum-virtual-machine"}
+2025-05-19 17:24:36.737 [INFO] [QVM] QVM instance created {"service":"quantum-virtual-machine"}
+2025-05-19 17:27:15.828 [INFO] [QVM] QVM instance created {"service":"quantum-virtual-machine"}
