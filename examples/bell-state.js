@@ -90,25 +90,16 @@ const runBellStateExample = async () => {
 
     // ---- CONDITIONAL PROBABILITIES ----
     console.log('\nTesting the conditional probabilities:');
-
     const conditionalResults = {
-    measured_0_then_0: 0,
-    measured_0_then_1: 0,
-    measured_1_then_0: 0,
-    measured_1_then_1: 0,
-    total_0: 0,
-    total_1: 0
+        'measured_0_then_0': 0,
+        'measured_0_then_1': 0,
+        'measured_1_then_0': 0,
+        'measured_1_then_1': 0,
+        'total_0': 0,
+        'total_1': 0
     };
 
-    const SHOTS = 10;
-
-    for (let i = 0; i < SHOTS; i++) {
-    if (i % 5 === 0) {
-        console.log(`Progress: ${i}/${SHOTS}`);
-        await sleep(0);
-    }
-
-    {
+    for (let i = 0; i < 10; i++) {
         const circuit = createCircuit();
         const q0 = circuit.allocateQubit();
         const q1 = circuit.allocateQubit();
@@ -126,17 +117,12 @@ const runBellStateExample = async () => {
         conditionalResults.total_1++;
         r1 === 0 ? conditionalResults.measured_1_then_0++ : conditionalResults.measured_1_then_1++;
         }
-
-        // Optional cleanup
-        circuit.destroy?.();
-    }
     }
 
-    // Compute and print final stats
-    const p00 = conditionalResults.measured_0_then_0 / conditionalResults.total_0 || 0;
-    const p01 = conditionalResults.measured_0_then_1 / conditionalResults.total_0 || 0;
-    const p10 = conditionalResults.measured_1_then_0 / conditionalResults.total_1 || 0;
-    const p11 = conditionalResults.measured_1_then_1 / conditionalResults.total_1 || 0;
+    const p00 = conditionalResults.measured_0_then_0 / conditionalResults.total_0;
+    const p01 = conditionalResults.measured_0_then_1 / conditionalResults.total_0;
+    const p10 = conditionalResults.measured_1_then_0 / conditionalResults.total_1;
+    const p11 = conditionalResults.measured_1_then_1 / conditionalResults.total_1;
 
     console.log(`First qubit measured as 0: ${conditionalResults.total_0} times`);
     console.log(`First qubit measured as 1: ${conditionalResults.total_1} times`);
@@ -145,7 +131,6 @@ const runBellStateExample = async () => {
     console.log(`P(second=1|first=0) = ${(p01 * 100).toFixed(1)}%`);
     console.log(`P(second=0|first=1) = ${(p10 * 100).toFixed(1)}%`);
     console.log(`P(second=1|first=1) = ${(p11 * 100).toFixed(1)}%`);
-
 
     console.log('\nBell state example completed!');
 };
